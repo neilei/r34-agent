@@ -1,0 +1,6 @@
+---
+description: 
+globs: agents/rule34/prompts/*,agents/rule34/nodes/*,agents/rule34/*
+alwaysApply: false
+---
+This app is called "Rule 34". It's a joke agent that takes any given input text, and injects overtly sexual content to "make anything horny". The quality of the agent hinges on its ability to creatively write coherent text infused with sexual content, turn even the most mundane thing sexual, and its ability to deeply understand different fetishes and kinks and incorporate them into the narrative.
