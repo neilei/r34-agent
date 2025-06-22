@@ -16,37 +16,38 @@ const cryptoWallets: CryptoWallet[] = [
     name: "Bitcoin",
     color: "#F7931A",
     logo: "/crypto/bitcoin-wordmark.png",
-    address: "0x00010101020202abcdef", // Replace with actual Bitcoin address
+    address: "bc1qm3wrfeth8e39ylsr5qxjaa5jr6hr37ndddncpv",
   },
   {
     name: "Ethereum",
     color: "#CAB3F5",
     logo: "/crypto/ethereum-wordmark-gray.svg",
-    address: "0x00010101020202abcdef", // Replace with actual Ethereum address
+    address: "0x796f9439E4DE91168842611e6cCA4950e3b4a819",
   },
   {
     name: "Base",
     color: "#0052FF",
     logo: "/crypto/base-wordmark-white.svg",
-    address: "0x00010101020202abcdef", // Replace with actual Base address
+    address: "0x796f9439E4DE91168842611e6cCA4950e3b4a819",
   },
   {
     name: "Solana",
     color: "#9945ff",
     logo: "/crypto/solana-wordmark-white.svg",
-    address: "0x00010101020202abcdef", // Replace with actual Solana address
+    address: "A1sRXU7HQ4gCeoGAv45RKNCYAYTj5MQkYSuiUB2iij4",
   },
   {
     name: "Polkadot",
     color: "#FF2670",
     logo: "/crypto/polkadot-wordmark-white.svg",
-    address: "0x00010101020202abcdef", // Replace with actual Polkadot address
+    address: "1a6GKaSsVa5QicJhv1UKdrh7WC62UvnSzBH9gET6BBd4Qqt",
   },
   {
     name: "Sui",
     color: "#4da2ff",
     logo: "/crypto/sui-wordmark-white.svg",
-    address: "0x00010101020202abcdef", // Replace with actual Sui address
+    address:
+      "0x15d37a3eeedc4af6629012ea9a2da720004cc9bfb4006e4437389052ef112633",
   },
 ];
 
@@ -72,8 +73,10 @@ export default function DonatePage() {
             Support Our Project
           </h1>
           <p className="text-lg text-gray-600">
-            Your donations help us continue building and improving our platform.
-            Choose your preferred cryptocurrency below.
+            Donations are welcome while we wait for Fetch.ai to provide economic
+            incentives. Imma get shut down at some point because corpos hate
+            sex, need donations to migrate to shady sex-positive infra. Choose
+            your preferred cryptocurrency below.
           </p>
         </div>
 

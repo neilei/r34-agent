@@ -27,7 +27,7 @@ export async function generateFinalAnalysis(
   rewrittenText: string,
   kinks: string[],
   horniness: number,
-  kinkScore: number,
+  kinkInclusion: number,
   contentPreservationScore: number,
   iterations: number
 ): Promise<string> {
@@ -37,7 +37,7 @@ export async function generateFinalAnalysis(
     .replace("{{KINKS}}", kinks.join(", "))
     .replace("{{ITERATIONS}}", iterations.toString())
     .replace("{{HORNINESS}}", horniness.toString())
-    .replace("{{KINK_SCORE}}", kinkScore.toString())
+    .replace("{{KINK_SCORE}}", kinkInclusion.toString())
     .replace(
       "{{CONTENT_PRESERVATION_SCORE}}",
       contentPreservationScore.toString()

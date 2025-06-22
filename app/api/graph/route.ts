@@ -3,6 +3,31 @@ import { supabase } from "@/lib/supabase";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 
+export type GraphResult = {
+  requestId: string;
+  veniceResponse: string;
+  finalAnalysis: string;
+  kinks: string[];
+  horniness: number;
+  kinkInclusion: number;
+  contentPreservationScore: number;
+  structurePreservationScore: number;
+  iterations: number;
+};
+
+export type GraphSuccessResponse = {
+  success: true;
+  result: GraphResult;
+};
+
+export type GraphErrorResponse = {
+  success: false;
+  error: string;
+  details?: z.ZodError["errors"];
+};
+
+export type GraphApiResponse = GraphSuccessResponse | GraphErrorResponse;
+
 // Define the request schema
 const graphRequestSchema = z.object({
   originalText: z.string().min(1, "Original text is required"),
@@ -15,13 +40,35 @@ const graphRequestSchema = z.object({
     ),
 });
 
-export async function POST(request: NextRequest) {
+export async function POST(
+  request: NextRequest
+): Promise<NextResponse<GraphApiResponse>> {
   try {
     // Parse and validate the request body
     const body = await request.json();
     const validatedData = graphRequestSchema.parse(body);
 
     const { originalText, kinks, sessionId } = validatedData;
+
+    if (originalText === "prebaked-test-query") {
+      console.log("Returning pre-baked response for test query.");
+      const preBakedResult: GraphResult = {
+        requestId: "test-request-id-qbf",
+        veniceResponse:
+          "This is a pre-baked response for 'prebaked-test-query', used as a test query to confirm parts of the REST API are working.",
+        finalAnalysis: "This is a pre-baked final analysis for the test query.",
+        kinks: ["testing"],
+        horniness: 0.1,
+        kinkInclusion: 0.1,
+        contentPreservationScore: 1.0,
+        structurePreservationScore: 1.0,
+        iterations: 1,
+      };
+      return NextResponse.json({
+        success: true,
+        result: preBakedResult,
+      });
+    }
 
     console.log("Running graph with:", {
       textLength: originalText.length,
@@ -80,7 +127,7 @@ export async function POST(request: NextRequest) {
             iteration: result.iteration,
             iterationHistory: result.iterationHistory,
             horniness: result.horniness,
-            kinkScore: result.kinkInclusion,
+            kinkInclusion: result.kinkInclusion,
             contentPreservationScore: result.contentPreservationScore,
             structurePreservationScore: result.structurePreservationScore,
           })
@@ -97,11 +144,11 @@ export async function POST(request: NextRequest) {
       success: true,
       result: {
         requestId: result.requestId,
-        veniceResponse: result.veniceResponse,
-        finalAnalysis: result.finalAnalysis,
+        veniceResponse: result.veniceResponse ?? "",
+        finalAnalysis: result.finalAnalysis ?? "",
         kinks: result.kinks,
         horniness: result.horniness,
-        kinkScore: result.kinkScore,
+        kinkInclusion: result.kinkInclusion,
         contentPreservationScore: result.contentPreservationScore,
         structurePreservationScore: result.structurePreservationScore,
         iterations: result.iteration,

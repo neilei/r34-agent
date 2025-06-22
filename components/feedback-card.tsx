@@ -1,8 +1,8 @@
 "use client";
 
-import { Button } from "@/archive/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/archive/components/ui/card";
-import { Textarea } from "@/archive/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
 import { Check, ThumbsDown, ThumbsUp } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 

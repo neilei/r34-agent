@@ -6,6 +6,7 @@ import { evaluateKinkInclusionNode } from "./nodes/evaluate-kink-inclusion";
 import { evaluateStructurePreservationNode } from "./nodes/evaluate-structure-preservation";
 import { fetishInferenceNode } from "./nodes/fetish-inference";
 import { generateRule34TextNode } from "./nodes/generate-rule34-text";
+import { VeniceResponse } from "./venice.types";
 
 export const GraphStateAnnotation = Annotation.Root({
   requestId: Annotation<string>,
@@ -22,7 +23,7 @@ export const GraphStateAnnotation = Annotation.Root({
   }),
   maxIterations: Annotation<number>({
     reducer: (curr, update) => update,
-    default: () => 3,
+    default: () => 1,
   }),
   minScores: Annotation<{
     horniness: number;
@@ -38,11 +39,11 @@ export const GraphStateAnnotation = Annotation.Root({
       structurePreservationScore: 7,
     }),
   }),
-  veniceResponse: Annotation<string | undefined>,
+  veniceResponse: Annotation<VeniceResponse | undefined>,
   rewrittenText: Annotation<string | undefined>,
   rationale: Annotation<string | undefined>,
   feedback: Annotation<
-    | {
+    | Partial<{
         horniness: {
           whatIsWorkingWell: string[];
           whatNeedsImprovement: string[];
@@ -63,7 +64,7 @@ export const GraphStateAnnotation = Annotation.Root({
           whatNeedsImprovement: string[];
           specificSuggestions: string[];
         };
-      }
+      }>
     | undefined
   >({
     reducer: (current, updates) => {
@@ -111,7 +112,7 @@ export const GraphStateAnnotation = Annotation.Root({
       iteration: number;
       rewrittenText: string;
       rationale: string;
-      feedback?: {
+      feedback?: Partial<{
         horniness: {
           whatIsWorkingWell: string[];
           whatNeedsImprovement: string[];
@@ -132,7 +133,7 @@ export const GraphStateAnnotation = Annotation.Root({
           whatNeedsImprovement: string[];
           specificSuggestions: string[];
         };
-      };
+      }>;
       horniness?: number;
       kinkInclusion?: number;
       contentPreservationScore?: number;

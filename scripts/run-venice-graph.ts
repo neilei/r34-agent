@@ -50,7 +50,7 @@ async function main() {
     console.log("\n📊 SCORES:");
     console.log(`Iterations Completed: ${result.iteration - 1}`);
     console.log(`Horniness Score: ${formatScores(result.horniness)}`);
-    console.log(`Kink Inclusion Score: ${formatScores(result.kinkScore)}`);
+    console.log(`Kink Inclusion Score: ${formatScores(result.kinkInclusion)}`);
     console.log(
       `Content Preservation: ${formatScores(result.contentPreservationScore)}`
     );

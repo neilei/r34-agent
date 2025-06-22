@@ -2,11 +2,13 @@
   "name": "rule34-agent2",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "bun@1.2.15",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
@@ -52,6 +54,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
     "tailwindcss": "^4",
+    "turbo": "^2.5.4",
     "tw-animate-css": "^1.2.9",
     "typescript": "^5"
   }

@@ -6,10 +6,10 @@ import { useForm } from "react-hook-form";
 import JSONPretty from "react-json-pretty";
 import { z } from "zod";
 
-import { FeedbackCard } from "@/archive/components/feedback-card";
-import { useSession } from "@/archive/components/session-provider";
-import { Button } from "@/archive/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/archive/components/ui/card";
+import { FeedbackCard } from "@/components/feedback-card";
+import { useSession } from "@/components/session-provider";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import {
   Form,
   FormControl,
@@ -18,17 +18,17 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/archive/components/ui/form";
-import { Input } from "@/archive/components/ui/input";
-import { Progress } from "@/archive/components/ui/progress";
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Progress } from "@/components/ui/progress";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/archive/components/ui/select";
-import { Textarea } from "@/archive/components/ui/textarea";
+} from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
 import { ChevronDown, ChevronRight, Rocket } from "lucide-react";
 
 const formSchema = z.object({
