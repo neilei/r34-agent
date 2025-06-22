@@ -70,11 +70,10 @@ export default function DonatePage() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-10">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Support Our Project
+            Support    Project
           </h1>
           <p className="text-lg text-gray-600">
-            Donations are welcome while we wait for Fetch.ai to provide economic
-            incentives. Imma get shut down at some point because corpos hate
+            Any donations are welcome. Imma get shut down at some point because corpos hate
             sex, need donations to migrate to shady sex-positive infra. Choose
             your preferred cryptocurrency below.
           </p>
@@ -103,7 +102,7 @@ export default function DonatePage() {
                     alt={`${wallet.name} logo`}
                     width={160}
                     height={40}
-                    className="object-contain max-h-10 w-auto"
+                    className="object-contain max-h-10 w-40"
                   />
                 </div>
               </div>
