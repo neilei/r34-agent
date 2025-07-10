@@ -1,4 +1,4 @@
-import { runVeniceGraph } from "../agents/rule34/rule34-text-graph";
+import { runVeniceGraph } from "../apps/agent/rule34-text-graph";
 
 async function testGraph() {
   console.log("Starting graph test...");

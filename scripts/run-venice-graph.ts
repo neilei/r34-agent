@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import { runVeniceGraph } from "../agents/rule34/rule34-text-graph";
+import { runVeniceGraph } from "../apps/agent/rule34-text-graph";
 
 // Load environment variables
 dotenv.config();

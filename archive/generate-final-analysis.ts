@@ -1,6 +1,6 @@
 import { ChatOpenAI } from "@langchain/openai";
 import { z } from "zod";
-import { GraphState } from "../agents/rule34/rule34-text-graph";
+import { GraphState } from "../apps/agent/rule34-text-graph";
 import { finalAnalysisPrompt } from "./final-analysis";
 
 const VENICE_BASE_URL = "https://api.venice.ai/api/v1/";

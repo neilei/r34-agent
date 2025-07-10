@@ -1,13 +1,26 @@
 {
   "$schema": "https://turborepo.com/schema.json",
+  "globalDependencies": ["bun.lockb"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/**", "!.next/cache/**", "dist/**"],
+      "env": [
+        "VENICE_API_KEY",
+        "SUPABASE_PROJECT_ID",
+        "SUPABASE_ANON_KEY",
+        "SUPABASE_SERVICE_ROLE",
+        "LANGSMITH_TRACING",
+        "LANGSMITH_ENDPOINT",
+        "LANGSMITH_API_KEY",
+        "LANGSMITH_PROJECT"
+      ]
     },
     "check-types": {
-      "dependsOn": ["^check-types"]
+      "dependsOn": ["^check-types"],
+      "outputs": ["tsconfig.tsbuildinfo"]
     },
+    "lint": {},
     "dev": {
       "persistent": true,
       "cache": false

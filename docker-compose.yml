@@ -1,0 +1,11 @@
+services:
+  rule34-agent:
+    build:
+      context: .
+      dockerfile: apps/agent/Dockerfile
+    ports:
+      - "3014:3001" # Unified REST API with MCP support
+    env_file:
+      - .env
+
+    restart: unless-stopped
